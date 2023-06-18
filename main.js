@@ -117,3 +117,14 @@ for (let i = 0; i < students.length; i++) {
     }
 }
 console.log(ages)
+
+const agesFullData = {}
+for (let i = 0; i < students.length; i++) {
+    if (Object.keys(agesFullData).includes(String(students[i].age))) {
+        agesFullData[students[i].age].push(students[i])
+    } else {
+        agesFullData[students[i].age] = []
+        agesFullData[students[i].age].push(students[i])
+    }
+}
+console.log(agesFullData)
